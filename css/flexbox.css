@@ -1,0 +1,191 @@
+/*CABECERA*/
+.cabecera__container{               /*Este es un selector de clase en CSS. Selecciona cualquier elemento HTML que tenga la clase cabecera__container*/
+    display: flex;                  /*Esta propiedad CSS le dice al navegador que debe hacer que el elemento se comporte como un contenedor flexible flex container. */
+    justify-content: space-between; /*los elementos se colocan de manera que haya un espacio igual entre cada par de elementos, pero no en los extremos del contenedor*/
+    align-items: center;            /*Los elemntos se centren de mejor manera*/
+    position: fixed;                /*Para que el enabezado se quede fijo*/
+    top: 0;                         /*EL lugar donde se quedara fijo*/
+}
+
+.cabecera__buscar__item{
+    display: none;                  /*Ocultar el campo de busqueda*/
+}
+/* Menu*/
+.menu__container{       /* Establece el contenedor con la clase .menu__container */
+    position: fixed;    /* Fija la posición del contenedor en relación a la ventana del navegador */
+    bottom: 0%;         /* Coloca el contenedor en la parte inferior de la ventana */
+    height: 75px;       /* Establece una altura fija para el contenedor */
+    width: 100%;        /* Establece el ancho del contenedor para que ocupe todo el ancho de la ventana */
+}
+
+.menu__lista{                       /* Define la clase .menu__lista */
+    display: flex;                  /* Establece el contenedor como un contenedor flex */
+    justify-content: space-around;  /* Justifica el contenido distribuyendo los elementos con espacios iguales alrededor de ellos */
+    height: 100%;                   /* Establece el contenedor para que ocupe el 100% de la altura del contenedor padre */
+}
+
+.menu__lista li{                    /* Aplica a los elementos li dentro de .menu__lista */
+    align-self: center;             /* Alinea cada elemento li verticalmente al centro de su contenedor flex padre */
+}
+
+.menu__itens{                       /* Define la clase .menu__itens */
+    display: flex;                  /* Establece el contenedor como un contenedor flex */
+    flex-direction: column;         /* Establece la dirección de los elementos como columna */
+    gap: 5px;                       /* Establece un espacio de 5px entre los elementos hijos */
+}
+
+.menu__lista:nth-child(2),  /* Oculta el segundo, tercer y cuarto elemento hijo dentro del contenedor .menu__lista */
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4){
+    display: none;          /* No muestra estos elementos */
+}
+
+/*SECCION SUPERIOR*/
+.superior__seccion__container 
+{
+    display: flex;           /* Establece el contenedor con la clase .superior__seccion__container como un contenedor flex */
+    align-items: center;     /* Centra verticalmente los elementos dentro del contenedor */
+    white-space: nowrap;     /* Evita que los elementos se envuelvan a una nueva línea */
+    overflow: scroll;        /* Permite que los elementos se desplacen horizontalmente si exceden el ancho del contenedor */
+    gap: 15px;               /* Establece el espacio entre los elementos dentro del contenedor */
+}
+
+/*VIDEOS YOUTUBE*/
+                    /* Estilos para los elementos con la clase .videos__item */
+.videos__item{
+                    /* Establece la altura del elemento a 303 píxeles */
+    height: 303px;
+                     /* Establece el ancho del elemento a 280 píxeles */
+    width: 280px;
+                    /* Permite que el elemento crezca para ocupar el espacio disponible en el contenedor flexible */
+    flex-grow: 1;
+}
+                    /* Estilos para el contenedor con la clase .videos__container */
+.videos__container{
+                    /* Define el contenedor como un contenedor flexible */
+    display: flex;
+                    /* Permite que los elementos hijos se envuelvan a la siguiente línea si no caben en una sola línea */
+    flex-wrap: wrap;
+                    /* Establece un espacio (gap) de 10 píxeles entre los elementos hijos */
+    gap: 10px;
+}
+
+ /* DESAFIO DESCRIPCIÓN DE LOS VIDEOS */ 
+                    /* Estilos para los elementos con la clase .descripcion-video */
+ .descripcion-video {
+                    /* Establece un margen superior de 1rem */
+    margin-top: 1rem;
+                    /* Define el contenedor como un contenedor flex */
+    display: flex;
+                     /* Alinea los elementos hijos al inicio del eje transversal (parte superior) */
+    align-items: start; 
+    
+}
+                    /* Estilos para las imágenes dentro de .descripcion-video */
+.descripcion-video img {
+                    /* Establece un margen derecho de 1rem */
+    margin-right: 1rem; 
+                     /* Evita que la imagen se reduzca en tamaño dentro del contenedor flex */
+    flex-shrink: 0;  
+    
+}
+                    /* Estilos para los elementos con la clase .detalles__video */
+.detalles__video {
+                    /* Organiza los elementos hijos en una columna */
+    flex-direction: column;
+                    /* Alinea el texto a la izquierda */
+    text-align:left;
+
+}
+                    /* Estilos para los elementos h3 dentro de .detalles__video */
+.detalles__video h3{
+                     /* Establece un margen inferior de 10 píxeles */
+    margin-bottom: 10px;
+}
+
+/*RODAPIE*/
+.rodapie__container{                
+    display: flex;              /* Establece el contenedor con la clase .rodapie__container como un contenedor flex */
+   /* Metodo 1 
+    flex-direction: column;       Establece la dirección de los elementos como columna 
+    flex-wrap: wrap;                Permite que los elementos se envuelvan en varias líneas si es necesario */
+
+    /*Metodo 2 La propiedad flex-flow es una forma abreviada en CSS para establecer tanto flex-direction como flex-wrap en un solo lugar*/
+    flex-flow: column wrap;
+    /*
+        Esto es equivalente a:
+        flex-direction: column;
+        flex-wrap: wrap;
+    */
+
+}
+
+@media(min-width:833px){            /* Estilos para pantallas con un ancho mínimo de 833px */
+    /*CABECERA*/
+    .cabecera__buscar__item{        /* Aplica estos estilos a elementos con la clase .cabecera__buscar__item */
+        display: block;             /* Cambia el display a block para que se muestren como bloques */
+    }
+    /*RODAPIE*/
+    .rodapie__container{
+        justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal con espacios iguales entre ellos */
+    }
+}
+
+/* MENU LATERAL PARA PANTALLAS DE TABLETS */
+@media (min-width: 834px) {             /* Aplica estos estilos solo cuando el ancho de la pantalla sea igual o mayor a 834px */
+    .menu__container {                  /* Estilos para el contenedor con la clase .menu__container */
+        left: 0;                        /* Coloca el contenedor en la parte izquierda de la ventana */
+        height: auto;                   /* Ajusta la altura del contenedor automáticamente según su contenido */
+        width: 74px;                    /* Establece el ancho del contenedor a 74px */
+        top: 80px;                      /* Coloca el contenedor a 80px desde la parte superior de la ventana */
+    }
+    
+    .menu__lista {                       /* Estilos para los elementos con la clase .menu__lista dentro del contenedor */
+        flex-direction: column;          /* Coloca los elementos en una columna, uno debajo del otro */
+        justify-content: flex-start;     /* Alinea los elementos al inicio del contenedor */
+        padding-top: 15px;               /* Añade un espacio de 15px en la parte superior del contenedor */
+        gap: 33px;                       /* Establece un espacio de 33px entre cada elemento de la lista */
+    }
+}
+
+@media (min-width: 1440px){         /* Aplica estos estilos solo cuando el ancho de la pantalla sea igual o mayor a 1440px */
+    .menu__container{               /* Estilos para el contenedor con la clase .menu__container */
+        width: 239px;               /* Establece el ancho del contenedor a 239px */
+        overflow: scroll;           /* Permite el desplazamiento si el contenido del contenedor desborda */
+    }
+    .menu__lista:nth-child(2),      /* Muestra el segundo, tercer y cuarto elemento hijo dentro de .menu__lista */
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4){
+        display: flex;              /* Muestra estos elementos como flexibles */
+    }
+    .menu__lista{                       /* Estilos para los elementos con la clase .menu__lista */
+        height: auto;                   /* Ajusta la altura del contenedor automáticamente según su contenido */
+        padding: 20px 17px 20px 15px;   /* Añade un relleno (padding) alrededor del contenedor */
+        gap: 15px;                      /* Establece un espacio de 15px entre cada elemento de la lista */
+    }
+
+    .menu__lista:nth-child(3){          /* Estilos para el tercer hijo de cualquier contenedor con la clase .menu__lista */
+        flex-direction: column-reverse; /* Coloca los elementos en una columna invertida (de abajo hacia arriba) */
+    }
+
+    .menu__itens{                        /* Estilos para los elementos con la clase .menu__itens dentro de .menu__lista */
+        flex-direction: row;            /* Coloca los elementos en una fila, uno al lado del otro */
+        gap: 15px;                      /* Establece un espacio de 15px entre cada elemento */
+        align-items: center;            /* Alinea verticalmente los elementos al centro de su contenedor */
+    }
+    /* Estilos para el contenedor con la clase .videojuegos */
+    .videojuegos{
+        /* Define el orden de este elemento en el contenedor flex como 3 */
+        order: 3;
+    }
+    /* Estilos para el contenedor con la clase .peliculas */
+    .peliculas{
+        /* Define el orden de este elemento en el contenedor flex como 2 */
+        order: 2;
+    }
+    /* Estilos para el contenedor con la clase .premium */
+    .premium{
+        /* Define el orden de este elemento en el contenedor flex como 1 */
+        order: 1;
+    }
+}
